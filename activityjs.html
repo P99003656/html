@@ -1,0 +1,73 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>Match Summary</title>
+	<script type="text/javascript">
+		function f2(){
+	    var R= document.getElementById("TeamA").value;
+	    var S= document.getElementById("TeamB").value;
+		var T= document.getElementById("scoreA").value;
+		var U= document.getElementById("scoreB").value;
+
+		var V=T.split('/');
+		var W=U.split('/');
+
+		if (V[0]>W[0]) {
+
+			document.getElementById("Win").innerHTML=R;
+		}
+		else{
+			document.getElementById("Win").innerHTML=S;
+		}
+	}
+	</script>
+</head>
+<style>
+body{
+	background-color: yellow;
+	
+}
+.required:after{
+	content: "*";
+	color: red;
+}
+</style>
+<body>
+<center>
+<div style="width: 50%">
+	<center>
+			<h2>Match Summary</h2>
+			<table>
+				<tr>
+			<td><label for="name" class="required">Team A:</label><br><br></td>
+			<td><input type="text" id="TeamA" placeholder="Team A"><br><br></td>
+			</tr>
+			<tr>
+			<td><label for="name" class="required">Team B:</label><br><br></td>
+			<td><input type="text"  id="TeamB" placeholder="Team B"><br><br></td>
+			</tr>
+			<tr>
+			<td><label for="date" class="required"> Date: </label><br><br></td>
+            <td><input type="date"  id="date" placeholder="DD/MM/YYYY"><br><br></td>
+		</tr>
+			<tr>
+			<td><label for="time" class="required"> Time: </label><br><br></td>
+			<td><input type="time"  id="time" placeholder="HH:MM:YY"><br><br></td>
+		</tr>
+		<tr>
+			<td><label for="name" class="required">Score A:</label><br><br></td>
+			<td><input type="text"  id="scoreA" placeholder="Team A"><br><br></td>
+			</tr>
+			<tr>
+			<td><label for="name" class="required">Score B:</label><br><br></td>
+			<td><input type="text"  id="scoreB" placeholder="Team A"><br><br></td>
+			</tr>
+		</table>
+		<input type="submit" id="save" value="Result" onclick="f2()">
+		<h3>Winning Team: </h3><p id="Win"></p>
+	
+</center>
+</div>
+</body>
+
+</html>
